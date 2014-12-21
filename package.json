@@ -1,0 +1,29 @@
+{
+  "name": "netiam-demo",
+  "version": "0.0.1",
+  "description": "This is the official netiam demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eliias/netiam.git"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "Webservice",
+    "OData",
+    "Demo"
+  ],
+  "author": "Hannes Moser <hannes@impossiblearts.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliias/netiam/issues"
+  },
+  "homepage": "https://github.com/eliias/netiam",
+  "dependencies": {
+    "express": "^4.10.6"
+  }
+}
