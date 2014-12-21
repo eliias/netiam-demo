@@ -1,10 +1,9 @@
 'use strict';
 
 var express = require( 'express' ),
-    netiam  = require( 'netiam' ),
     app     = express(),
     server  = require( 'http' ).createServer( app ),
-    netiam  = netiam( app );
+    netiam  = require( 'netiam' )( app );
 
 netiam
     .get( '/' )
