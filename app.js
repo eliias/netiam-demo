@@ -13,28 +13,32 @@ require( './modules/db' );
 app.use( bodyParser.json() );
 
 netiam
-    .get( '/users', {model: User} )
-    .rest()
+    .get( '/users' )
+    .rest( {model: User} )
+    .profile( {query: 'profile'} )
     .json();
 
 netiam
-    .post( '/users', {model: User} )
-    .rest()
+    .post( '/users' )
+    .rest( {model: User} )
+    .profile( {query: 'profile'} )
     .json()
 
 netiam
-    .get( '/users/:id', {model: User} )
-    .rest()
+    .get( '/users/:id' )
+    .rest( {model: User} )
+    .profile( {query: 'profile'} )
     .json();
 
 netiam
-    .put( '/users/:id', {model: User} )
-    .rest()
+    .put( '/users/:id' )
+    .rest( {model: User} )
+    .profile( {query: 'profile'} )
     .json();
 
 netiam
-    .delete( '/users/:id', {model: User} )
-    .rest()
+    .delete( '/users/:id' )
+    .rest( {model: User} )
     .json();
 
 server.listen( 3000 );
