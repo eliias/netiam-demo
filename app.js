@@ -27,18 +27,21 @@ app.use( function( err, req, res, next ) {
 
 netiam
     .get( '/users' )
+    .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
-    //.json();
+    .json();
 
 netiam
     .post( '/users' )
+    .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
     .json();
 
 netiam
     .get( '/users/:id' )
+    .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
     .transform( function() {
@@ -50,6 +53,7 @@ netiam
 
 netiam
     .put( '/users/:id' )
+    .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
     .json();
@@ -63,8 +67,8 @@ netiam
 app.use( function( req, res ) {
     res
         .json( {
-            code:    404,
-            status:  'DOCUMENT NOT FOUND'
+            code:   404,
+            status: 'DOCUMENT NOT FOUND'
         } );
 } );
 

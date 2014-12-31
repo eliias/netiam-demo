@@ -1,0 +1,60 @@
+{
+    "*": {
+        "ALLOW": {
+            "ADMIN": "CRUD"
+        }
+    },
+    "_id": {
+        "ALLOW": {
+            "USER": "R",
+            "GUEST": "R"
+        }
+    },
+    "name": {
+        "ALLOW": {
+            "USER": "RU",
+            "GUEST": "RU"
+        }
+    },
+    "description": {
+        "ALLOW": {
+            "USER": "RU",
+            "GUEST": "RU"
+        }
+    },
+    "email": {
+        "ALLOW": {
+            "USER": "RU"
+        }
+    },
+    "password": {
+        "ALLOW": {
+            "OWNER": "RU"
+        }
+    },
+    "firstname": {
+        "ALLOW": {
+            "USER": "RU"
+        }
+    },
+    "lastname": {
+        "ALLOW": {
+            "USER": "RU"
+        }
+    },
+    "location": {
+        "ALLOW": {
+            "USER": "RU"
+        }
+    },
+    "created": {
+        "ALLOW": {
+            "OWNER": "R"
+        }
+    },
+    "modified": {
+        "ALLOW": {
+            "OWNER": "R"
+        }
+    }
+}
