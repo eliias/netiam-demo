@@ -1,17 +1,36 @@
 'use strict';
 
-var express    = require( 'express' ),
-    bodyParser = require( 'body-parser' ),
-    app        = express(),
-    server     = require( 'http' ).createServer( app ),
-    netiam     = require( 'netiam' )( app ),
-    User       = require( './models/user' );
+var express       = require( 'express' ),
+    passport      = require( 'passport' ),
+    compression   = require( 'compression' ),
+    bodyParser    = require( 'body-parser' ),
+    cookieSession = require( 'cookie-session' ),
+    app           = express(),
+    server        = require( 'http' ).createServer( app ),
+    netiam        = require( 'netiam' )( app ),
+    User          = require( './models/user' ),
+    session;
 
-// Database
 require( './modules/db' );
 
+session = cookieSession( {
+    maxage:      1000 * 60 * 60 * 24,
+    key:         'secret.key',
+    secret:      'secret',
+    signed:      true,
+    secureProxy: true
+} );
+
 app.enable( 'trust proxy' );
+
+app.disable( 'x-powered-by' );
+
+app.use( compression() );
 app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded( {extended: true} ) );
+app.use( session );
+app.use( passport.initialize() );
+app.use( passport.session() );
 
 // Error handling
 app.use( function( err, req, res, next ) {
@@ -26,7 +45,15 @@ app.use( function( err, req, res, next ) {
 } );
 
 netiam
+    .post( '/login' )
+    .authenticate( {model: User} )
+    .acl( {model: User} )
+    .login()
+    .json();
+
+netiam
     .get( '/users' )
+    .authenticate( {model: User} )
     .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
@@ -34,6 +61,7 @@ netiam
 
 netiam
     .post( '/users' )
+    .authenticate( {model: User} )
     .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
@@ -41,6 +69,7 @@ netiam
 
 netiam
     .get( '/users/:id' )
+    .authenticate( {model: User} )
     .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
@@ -53,6 +82,7 @@ netiam
 
 netiam
     .put( '/users/:id' )
+    .authenticate( {model: User} )
     .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
@@ -60,6 +90,7 @@ netiam
 
 netiam
     .delete( '/users/:id' )
+    .authenticate( {model: User} )
     .rest( {model: User} )
     .json();
 
