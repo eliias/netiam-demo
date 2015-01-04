@@ -6,6 +6,7 @@ var express       = require( 'express' ),
     bodyParser    = require( 'body-parser' ),
     cookieSession = require( 'cookie-session' ),
     favicon       = require( 'serve-favicon' ),
+    morgan        = require( 'morgan' ),
     app           = express(),
     server        = require( 'http' ).createServer( app ),
     netiam        = require( 'netiam' )( app ),
@@ -26,6 +27,7 @@ app.enable( 'trust proxy' );
 
 app.disable( 'x-powered-by' );
 
+app.use( morgan( 'dev' ) );
 app.use( favicon( __dirname + '/public/favicon.ico' ) );
 app.use( compression() );
 app.use( bodyParser.json() );
