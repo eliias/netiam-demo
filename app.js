@@ -63,6 +63,17 @@ netiam
     .profile( {query: 'profile'} )
     .json();
 
+app.get(
+    '/users-mw',
+    netiam
+        .middleware()
+        .authenticate( {model: User} )
+        .acl( {model: User} )
+        .rest( {model: User} )
+        .profile( {query: 'profile'} )
+        .json()
+);
+
 netiam
     .post( '/users' )
     .authenticate( {model: User} )
@@ -70,6 +81,17 @@ netiam
     .rest( {model: User} )
     .profile( {query: 'profile'} )
     .json();
+
+app.post(
+    '/users-mw',
+    netiam
+        .middleware()
+        .authenticate( {model: User} )
+        .acl( {model: User} )
+        .rest( {model: User} )
+        .profile( {query: 'profile'} )
+        .json()
+);
 
 netiam
     .get( '/users/:id' )
@@ -84,6 +106,22 @@ netiam
     } )
     .json();
 
+app.get(
+    '/users-mw/:id',
+    netiam
+        .middleware()
+        .authenticate( {model: User} )
+        .acl( {model: User} )
+        .rest( {model: User} )
+        .profile( {query: 'profile'} )
+        .transform( function() {
+            var body = this.body();
+            body.password = undefined;
+            this.body( body );
+        } )
+        .json()
+);
+
 netiam
     .put( '/users/:id' )
     .authenticate( {model: User} )
@@ -92,11 +130,31 @@ netiam
     .profile( {query: 'profile'} )
     .json();
 
+app.put(
+    '/users-mw/:id',
+    netiam
+        .middleware()
+        .authenticate( {model: User} )
+        .acl( {model: User} )
+        .rest( {model: User} )
+        .profile( {query: 'profile'} )
+        .json()
+);
+
 netiam
     .delete( '/users/:id' )
     .authenticate( {model: User} )
     .rest( {model: User} )
     .json();
+
+app.delete(
+    '/users-mw/:id',
+    netiam
+        .middleware()
+        .authenticate( {model: User} )
+        .rest( {model: User} )
+        .json()
+);
 
 // Catch all
 app.use( function( req, res ) {
