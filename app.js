@@ -9,7 +9,9 @@ var express       = require( 'express' ),
     morgan        = require( 'morgan' ),
     app           = express(),
     server        = require( 'http' ).createServer( app ),
-    netiam        = require( 'netiam' )( app ),
+    lib           = require( 'netiam' ),
+    storage       = lib.cache.file,
+    netiam        = lib( app ),
     User          = require( './models/user' ),
     session;
 
@@ -58,6 +60,7 @@ netiam
 netiam
     .get( '/users' )
     .authenticate( {model: User} )
+    .cache( {storage: storage( {path: '.tmp/cache'} )} )
     .acl( {model: User} )
     .rest( {model: User} )
     .profile( {query: 'profile'} )
