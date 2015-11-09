@@ -33,7 +33,7 @@
     "mongoose": "4.2.3",
     "morgan": "^1.6.1",
     "oauth2orize": "^1.1.1",
-    "passport": "^0.3.0",
+    "passport": "^0.3.2",
     "serve-favicon": "^2.2.0"
   }
 }
