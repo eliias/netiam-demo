@@ -34,6 +34,6 @@
     "morgan": "^1.6.1",
     "oauth2orize": "^1.1.1",
     "passport": "^0.3.0",
-    "serve-favicon": "^2.2.0"
+    "serve-favicon": "^2.3.0"
   }
 }
