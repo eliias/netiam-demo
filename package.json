@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/eliias/netiam",
   "dependencies": {
-    "body-parser": "^1.14.1",
+    "body-parser": "^1.14.2",
     "compression": "^1.6.0",
     "connect-ensure-login": "^0.1.1",
     "cookie-session": "^1.1.0",
