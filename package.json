@@ -3,7 +3,7 @@
   "description": "This is the official netiam demo",
   "main": "app.js",
   "scripts": {
-    "test": "npm test",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
