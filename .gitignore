@@ -1,8 +1,17 @@
+# System
+.DS_Store
+
 # IDE
 .idea
 
-# Node.js
-node_modules
+# node.js
+npm-debug.log
+node_modules/
 
-# App
-.tmp
+# lib
+.tmp/
+coverage/
+lib/
+
+# build
+dev
