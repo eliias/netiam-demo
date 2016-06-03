@@ -52,7 +52,7 @@
     "express": "^4.13.4",
     "morgan": "^1.7.0",
     "netiam": "^7.3.0",
-    "netiam-contrib-auth": "^1.1.0",
+    "netiam-contrib-auth": "^1.2.0",
     "netiam-contrib-json": "^1.0.1",
     "netiam-contrib-oauth": "^1.2.0",
     "netiam-contrib-rest": "^1.9.6",
