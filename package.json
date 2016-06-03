@@ -54,7 +54,7 @@
     "netiam": "^7.3.0",
     "netiam-contrib-auth": "^1.1.0",
     "netiam-contrib-json": "^1.0.1",
-    "netiam-contrib-oauth": "^1.1.0",
+    "netiam-contrib-oauth": "^1.1.2",
     "netiam-contrib-rest": "^1.9.6",
     "passport": "^0.3.2",
     "sequelize": "^3.23.3",
