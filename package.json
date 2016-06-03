@@ -39,7 +39,7 @@
     "eslint": "^2.11.1",
     "mocha": "^2.5.3",
     "semantic-release": "^4.3.5",
-    "sequelize-cli": "^2.3.1",
+    "sequelize-cli": "^2.4.0",
     "should": "^9.0.0",
     "supertest": "^1.2.0"
   },
