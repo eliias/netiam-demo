@@ -33,7 +33,7 @@
   "homepage": "https://github.com/netiam/demo",
   "devDependencies": {
     "apidoc": "^0.16.1",
-    "babel-cli": "^6.9.0",
+    "babel-cli": "^6.10.1",
     "babel-eslint": "^6.0.4",
     "babel-preset-es2015-node5": "^1.1.2",
     "eslint": "^2.11.1",
