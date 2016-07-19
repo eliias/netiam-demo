@@ -57,7 +57,7 @@
     "netiam-contrib-oauth": "^1.2.0",
     "netiam-contrib-rest": "^1.12.2",
     "passport": "^0.3.2",
-    "sequelize": "^3.23.4",
+    "sequelize": "^3.23.6",
     "sqlite3": "^3.1.4",
     "uuid": "^2.0.2"
   },
