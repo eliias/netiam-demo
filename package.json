@@ -40,7 +40,7 @@
     "mocha": "^3.0.1",
     "semantic-release": "^4.3.5",
     "sequelize-cli": "^2.4.0",
-    "should": "^10.0.0",
+    "should": "^11.0.0",
     "supertest": "^2.0.0"
   },
   "dependencies": {
