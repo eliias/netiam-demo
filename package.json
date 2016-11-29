@@ -59,7 +59,7 @@
     "passport": "^0.3.2",
     "sequelize": "^3.26.0",
     "sqlite3": "^3.1.8",
-    "uuid": "^2.0.3"
+    "uuid": "^3.0.1"
   },
   "engines": {
     "node": ">=5",
