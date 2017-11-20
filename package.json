@@ -47,7 +47,7 @@
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "config": "^1.23.0",
-    "continuation-local-storage": "^3.2.0",
+    "continuation-local-storage": "^3.2.1",
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
