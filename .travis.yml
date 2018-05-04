@@ -15,6 +15,7 @@ notifications:
   email: false
 node_js:
   - '5'
+  - '10'
 before_script:
   - npm prune
 after_success:
