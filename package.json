@@ -44,7 +44,7 @@
     "should": "^13.0.0"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.18.3",
     "compression": "^1.6.2",
     "config": "^1.23.0",
     "continuation-local-storage": "^3.2.0",
